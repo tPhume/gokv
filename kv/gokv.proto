@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "tPhume.gokv";
+option java_outer_classname = "GoKv";
+
+package kv;
+
+// Represent a key
+message Key {
+    string key = 1;
+}
+
+// Represent a value
+message Value {
+    map<string, string> value = 1;
+}
+
+// Represents key-value pair
+message KeyValue {
+    Key key = 1;
+    Value value = 2;
+}
+
+// Represent response message with no key-value pair
+message Response {
+    string message = 1;
+    KeyValue kv = 2;
+}
+
+// Our key-value service definition
+service GoKv {
+    // Insert key-value pairs
+    rpc Insert (KeyValue) returns (Response) {
+    }
+
+    // Update key-value pairs
+    rpc Update (KeyValue) returns (Response) {
+    }
+
+    // Search for value with key
+    rpc Search (Key) returns (Response) {
+    }
+
+    // Remove a key-value pair with a key
+    rpc Remove (Key) returns (Response) {
+    }
+}
