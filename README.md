@@ -9,10 +9,12 @@ There are two simple ways to start the example main service.
 The easiest way to start the example main service is to build the Dockerfile.
 and the run it. The service REST (details about the REST api is further down) server is exposed through port `:8888` 
 and the gRPC server is exposed through port `:9999`.
+![Docker](img/docker.png)
 
 ### `Go compiler`
 If you have Go 1.13 installed, then you can simply build and run the main service as you would a normal Go program.
 The just execute the binary file given.
+![Build and Run](img/compiler.png)
  
 ### `REST`
 The REST api is accessed through `/store/v1/:key`.
